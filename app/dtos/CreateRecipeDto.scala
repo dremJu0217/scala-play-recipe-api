@@ -5,7 +5,7 @@ import play.api.libs.json._
 
 case class CreateRecipeDto(
                               title: String,
-                              makingTime: String,
+                              making_time: String,
                               serves: String,
                               ingredients: String,
                               cost: Long,

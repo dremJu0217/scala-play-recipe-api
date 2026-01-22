@@ -8,7 +8,7 @@ object RecipeValidator extends Validator {
     val baseErrs =
       List(
         isNotEmpty("title", dto.title),
-        isNotEmpty("makingTime", dto.makingTime),
+        isNotEmpty("making_time", dto.making_time),
         isNotEmpty("serves", dto.serves),
         isNotEmpty("ingredients", dto.ingredients),
         isNotEmpty("cost", dto.cost.toString),

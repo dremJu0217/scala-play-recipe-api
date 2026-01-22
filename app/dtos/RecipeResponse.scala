@@ -5,7 +5,7 @@ import play.api.libs.json.{Json, OFormat}
 case class RecipeResponse(
                            id: Int,
                            title: String,
-                           makingTime: String,
+                           making_time: String,
                            serves: String,
                            ingredients: String,
                            cost: Long

@@ -22,12 +22,12 @@ class RecipeService @Inject()(
     else {
       val recipe = Recipe(
         title = dto.title,
-        makingTime = dto.makingTime,
+        making_time = dto.making_time,
         serves = dto.serves,
         ingredients = dto.ingredients,
         cost = dto.cost,
-        createdAt = Instant.now().toString.replace("T"," ").substring(0, 19),
-        updatedAt = Instant.now().toString.replace("T"," ").substring(0, 19),
+        created_at = Instant.now().toString.replace("T"," ").substring(0, 19),
+        updated_at = Instant.now().toString.replace("T"," ").substring(0, 19),
       )
       recipeRepo.create(recipe)
         .map(createdRecipe  => Right(createdRecipe ))
@@ -41,7 +41,7 @@ class RecipeService @Inject()(
         RecipeResponse(
           id = r.id.get,
           title = r.title,
-          makingTime = r.makingTime,
+          making_time = r.making_time,
           serves = r.serves,
           ingredients = r.ingredients,
           cost = r.cost
@@ -56,7 +56,7 @@ class RecipeService @Inject()(
           RecipeResponse(
             id = c.id.get,
             title = c.title,
-            makingTime = c.makingTime,
+            making_time = c.making_time,
             serves = c.serves,
             ingredients = c.ingredients,
             cost = c.cost
@@ -79,16 +79,16 @@ class RecipeService @Inject()(
         case Some(existing) =>
           val merged = existing.copy(
             title = dto.title,
-            makingTime = dto.makingTime,
+            making_time = dto.making_time,
             serves = dto.serves,
             ingredients = dto.ingredients,
             cost = dto.cost,
-            updatedAt = Instant.now().toString.replace("T"," ").substring(0, 19),
+            updated_at = Instant.now().toString.replace("T"," ").substring(0, 19),
           )
           recipeRepo.update(id, merged)
             .map(_ => Right(CreateRecipeDto(
               title = merged.title,
-              makingTime = merged.makingTime,
+              making_time = merged.making_time,
               serves = merged.serves,
               ingredients = merged.ingredients,
               cost = merged.cost
